@@ -12,4 +12,24 @@ public class Ahnenbaum {
         BinaryTree<Ahne> b6= new BinaryTree<Ahne> (new Ahne("Valeri","Kosych", 'M'),b4,b5);
         SaschasAhnenbaum = new BinaryTree<Ahne>(new Ahne("Sascha", "Kosych", 'M'), b3, b6);
     }
+
+    //W L R
+    public void preOrderAusgabe(){
+        besuche(SaschasAhnenbaum);
+
+    }
+    private void besuche(BinaryTree<Ahne> b){
+
+    }
+
+    //L W R
+    public String inOrder(){
+
+    }
+
+    //L R W
+    public String postOrder(){
+
+    }
+
 }
