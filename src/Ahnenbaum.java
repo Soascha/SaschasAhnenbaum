@@ -13,23 +13,76 @@ public class Ahnenbaum {
         SaschasAhnenbaum = new BinaryTree<Ahne>(new Ahne("Sascha", "Kosych", 'M'), b3, b6);
     }
 
-    //W L R
-    public void preOrderAusgabe(){
-        besuche(SaschasAhnenbaum);
-
-    }
-    private void besuche(BinaryTree<Ahne> b){
-
+    
+    public void preorderAusgabe() {
+        besuchePreOrder(SaschasAhnnenbaum);
     }
 
-    //L W R
-    public String inOrder(){
+    private void besuchePreOrder(BinaryTree<Ahne> b) {
+        if (!b.isEmpty()) {
+            System.out.println(b.getContent().getVorname());
+        }
+        if (!b.getLeftTree().isEmpty()) {
+            besuchePreOrder(b.getLeftTree());
+        }
+        if (!b.getRightTree().isEmpty()) {
+            besuchePreOrder(b.getRightTree());
+        }
+
 
     }
 
-    //L R W
-    public String postOrder(){
+    public void inorderAusgabe() {
+        besucheInOrder(SaschasAhnnenbaum);
+    }
+
+
+    private void besucheInOrder(BinaryTree<Ahne> b) {
+        if (!b.isEmpty()) {
+            if (!b.getLeftTree().isEmpty()) {
+                besucheInOrder(b.getLeftTree());
+            }
+            System.out.println(b.getContent().getVorname());
+
+            if (!b.getRightTree().isEmpty()) {
+                besucheInOrder(b.getRightTree());
+            }
+        }
+    }
+
+    public void postorderAusgabe() {
+        besuchePostOrder(SaschasAhnnenbaum);
+    }
+
+    private void besuchePostOrder(BinaryTree<Ahne> b) {
+        if (!b.isEmpty()) {
+            if (!b.getLeftTree().isEmpty()) {
+                besuchePostOrder(b.getLeftTree());
+            }
+            if (!b.getRightTree().isEmpty()) {
+                besuchePostOrder(b.getRightTree());
+            }
+            System.out.println(b.getContent().getVorname());
+        }
+
 
     }
+
+public void inorderAusgabe(){
+        besuche(SaschasAhnnenbaum);
+}
+
+private void besuche(BinaryTree<Ahne>){
+
+}
+
+
+
+
+
+
+
+
+
 
 }
